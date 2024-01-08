@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+.more__info {
+  display: block;
+}
+.col {
+  margin-inline: auto;
+}
+.navbar-brand,
+.nav-link {
+  color: white !important;
+}
+.table--column {
+  height: 14vh;
+}
+.all__posts--section {
+  border: 1px solid black;
+  margin: 0;  
+  height: 35vh !important;
+}
+.article__title {
+  font-size: 1.5rem;
+}
+
+.signup__link {
+  border: 2px solid white !important;
+  border-radius: 10px !important;
+}
+.signup__link:hover {
+  border: 2px solid rgb(33, 37, 41);
+  background-color: white;
+  color: rgb(33, 37, 41) !important;
+}
+
+.footer__section {
+  width: 100%;
+  background: #ffff;
+  display: block;
+}
+
+#footer {
+  width: 100%;
+  margin-left: 88%;
+}
+.page-link:hover {
+  background-color: white !important;
+  color: rgb(33,37,41) !important;
+  border-color: rgb(33,37,41)!important;
+}
+:any-link {
+  text-decoration: none;
+}
+:any-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1050px) {
+  .main {
+    flex-direction: row;
+    margin-top: 1em;
+  }
+  .description__text {
+    display: none;
+  }
+  #footer {
+    width: 100%;
+    margin-left: 80%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .relase__date {
+    display: none ;
+  }
+  .introduction {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 600px){
+  header .wrapper section {
+    padding: 2em !important;
+  }
+  
+  #navbarSupportedContent ul li a {
+    padding: 1em;
+  }
+  #footer {
+    margin-left: 72%;
+  }
+}
+@media screen and (max-width: 515px) {
+  #title {
+    white-space: nowrap !important;
+  }
+  .table__image {
+    width: 50px;
+    height: 50px;
+  }
+  .wrapper {
+    gap: 1em;
+  }
+  .introduction p {
+    font-size: 8px;
+  }
+  .all__posts--section div img {
+    width: 100px;
+  }
+  .all__posts--section {
+    height: 150px !important;
+  }
+  .article__title {
+    font-size: .8rem !important;
+  }
+  .more__info {
+    font-size: .8rem;
+  }
+  #footer {
+    margin-left: 65%;
+  }
+}

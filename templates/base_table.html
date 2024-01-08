@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-bordered border-2 border-light">
+  <thead>
+    <h4>Recent Posts</h4>
+  </thead>
+  <div class="table-group-divider"></div>
+  {% for info in all_table_information %}
+    <tbody>
+      <tr class="row d-flex flex-column">
+        <td class="col table--column">
+          <div class="d-flex justify-content-around wrapper">
+            <picture>
+              <img src="/static/img/{{ info.image }}" width="70px" height="85px" alt="img" class="table__image">
+            </picture>
+            <div class="introduction">
+              <p class="fw-bold">{{ info.title }}</p>
+              <p class="text-muted">{{ info.date.strftime('%Y %B %d, %H:%M:%S ') }}</p>
+            </div>
+          </div>
+        </td>  
+      </tr>
+    </tbody>
+  {% endfor %}
+</table>
+{% endblock %}

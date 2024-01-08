@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  background:#212529 ;
+}
+
+#container {
+  margin-top: 6em;
+}
+
+.input_parent,
+#form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.primary__btn {
+  width: 10%;
+  padding: .5em 0;
+  color: #212529;
+}
+
+[type="text"],
+[type="password"] {
+  background: #343a40;
+  color: white;
+  border: 1px solid #495057;
+  width: 50%;
+  height: 50px; 
+}
+
+[type="text"]:focus,
+[type="password"]:focus {
+  background-color: #495057;
+}
+
+h1 {
+  color: rgb(13,110,253);
+  text-align: center;
+  font-weight: bold;
+}
+
+p {
+  color: rgb(9, 81, 188);
+  text-align: center;
+}
+
+.arrow_out {
+  color: rgb(13,110,253);
+}
+.arrow_out--parent {
+  position: absolute;
+  top: 6.5em;
+  left: 5em;
+}
+
+@media screen and (max-width: 600px) {
+  #btn {
+    text-align: center;
+    width: 40%;
+  }
+}

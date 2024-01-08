@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>post search results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    :any-link {
+      text-decoration: none;
+      color: unset;
+    }
+    .more_info:hover {
+      text-decoration: underline;
+    }
+    .arrow_out--parent {
+      position: absolute;
+      left: 4%;
+      top: 10%;
+    }
+    .page-link:hover {
+      background-color: rgb(13,110,253)!important;
+      color: rgb(33,37,41) !important;
+    }
+    .more__info:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="bg-dark d-flex flex-column align-items-center">
+  <div class="arrow_out--parent text-primary">
+    <a href="/1">
+      <i class="fa-sharp fa-solid fa-arrow-left fs-2 arrow_out"></i>        
+    </a>
+  </div>
+  <h1 class="h1 text-primary text-center py-5">Searched Results:</h1>
+  {% for post in Posts %}
+  <section class="d-flex w-75 border border-1 border-primary py-4 mb-5">
+    <div class="col-img img-fluid d-flex justify-content-center align-items-center" style="width: 239px;">
+      <img src="/static/img/{{ post.image }}" alt="image" class="img-fluid" style="max-width: 180px; max-height: 210px;"> 
+    </div>
+    <div class="col-text d-flex justify-content-center flex-column">
+      <p class="fw-bold article__title text-primary fw-bold fs-2">{{ post.title }}</p>
+      <p class="relase__date text-secondary">Posted on: {{ post.date.strftime('%Y %B %d, %H:%M:%S ')  }} </p>
+      <p class="description__text text-secondary">
+        {{ post.description }}
+      </p>
+      <a href="/post/{{ post.id }}" class="more__info text-primary">
+        for external page click here
+      </a>
+    </div>
+  </section>
+  {% endfor %}
+
+  <nav aria-label="Page navigation example" class="py-5">
+    <ul class="pagination g-2">
+      {% for page in Posts.iter_pages() %}
+      <li class="page-item"><a class="page-link bg-dark text-primary border-primary" href="/search/{{ page }}?search={{ search }}">{{ page }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <script src="https://kit.fontawesome.com/cdfccb4dbb.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+</body>
+</html>

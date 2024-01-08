@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/static/css/SignUp_style.css">
+</head>
+<body>
+  <div class="arrow_out--parent text-primary">
+    <a href="/1">
+      <i class="fa-sharp fa-solid fa-arrow-left fs-2 arrow_out"></i>        
+    </a>
+  </div>
+  <div class="container-fluid d-flex flex-column w-100 align-items-center">
+    <h1 class="text-primary">Register</h1>
+    <p class="text-center">Register to the website to have access to the posts <br> <span class="text-primary">if you are signed in to the website <a href="/LogIn" style="text-decoration: underline !important;">Log in</a></span></p>
+    <form id="LogIn__form" class="mt-2" enctype="multipart/form-data" method="post">
+      {{ signUp_data.hidden_tag() }}
+      <div class="mb-3">
+        {{ signUp_data.username.label(class="text-primary") }}
+        {{ signUp_data.username(class="opacity-75") }}
+      </div>
+      <div class="mb-3">
+        {{ signUp_data.password.label(class="text-primary") }}
+        {{ signUp_data.password(class="opacity-75") }}
+      </div>
+      <div class="mb-3">
+        {{ signUp_data.birthDate.label(class="text-primary") }}
+        {{ signUp_data.birthDate(class="text-primary opacity-75") }}
+      </div>
+      <div class="mb-3">
+        {{ signUp_data.submit(class="primary__btn bg-primary") }}
+      </div>
+    </form>
+  </div>
+  <script src="https://kit.fontawesome.com/cdfccb4dbb.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+</body>
+</html>

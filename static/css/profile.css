@@ -1,0 +1,194 @@
+body {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  font-family: 'Arial', sans-serif !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.fa-arrow-left {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+}
+span {
+  color: rgb(13,110,253);
+  font-size: larger;
+}
+
+.additional_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-file-input {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  width: 220px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-file-input:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.photo--data {
+  width: 100%;
+  height: 100%;
+}
+
+.danger__place {
+  font-size: 10px; 
+  font-weight: bold; 
+  white-space: nowrap;
+}
+
+.change__SignUp--information {  
+  margin-inline: auto !important;
+  width: 85% !important;
+  height: 10cqb;
+}
+
+.change__SignUp--information > a > button {
+  transition: opacity 0.3s, border-color 0.3s;
+}
+.change__SignUp--information > a > button:hover {
+  opacity: .7;
+}
+
+
+.footer {
+  margin-inline: auto;
+  height: auto !important;
+}
+
+.article__title {
+  width: 50% !important;
+}
+
+.description__text {
+  font-size: 10px !important;
+  font-family: system-ui, 'Roboto', sans-serif;
+}
+
+@media screen and (max-width: 1280px) {
+  [user_info] > h1 {
+    font-size: 1.2rem;
+  }
+  [user_info] > span {
+    font-size: 1rem;
+  }
+  .profile__photo form input, 
+  .profile__photo form label {
+    width: 120px !important;
+    white-space: nowrap;
+  }
+}
+@media screen and (max-width: 900px) {
+  [user_info] > h1 {
+    font-size: .8rem;
+  }
+  [user_info] > span {
+    font-size: .6rem;
+  }
+  .profile__photo form input, 
+  .profile__photo form label {
+    width: 100px !important;
+    white-space: nowrap;
+    font-size: 11px;
+  }
+  .change__SignUp--information {
+    flex-direction: column !important;
+    gap: 1em;
+    width: 300px !important;
+    padding: 80px;
+  }
+  .change__SignUp--information button {
+    width: 150px;
+    height: 50px;
+    white-space: nowrap;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  [user_info] > h1 {
+    font-size: .6rem !important;
+    white-space: nowrap;
+  }
+  [user_info] > span {
+    font-size: .4rem !important;
+    white-space: nowrap;
+  } 
+  .profile__photo form input, 
+  .profile__photo form label {
+    width: 60px !important;
+    white-space: nowrap;
+    font-size: 5px;
+  }
+  .all__posts--section {
+    width: 450px;
+  }
+  .all__posts--section div .article__title {
+    font-size: 15px !important;
+  }
+  .all__posts--section div .article__title {
+    font-size: 12px !important;
+  };
+}
+
+@media screen and (max-width: 630px) {
+  .profile__photo form input, 
+  .profile__photo form label {
+    width: 50px !important;
+    white-space: nowrap;
+    font-size: 5px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .all__posts--section {
+    width: 350px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .relase__date,
+  .article__title {
+    display: none;
+  }
+  .additional_section {
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .additional_section a {
+    width: 100px;
+  }
+  .additional_section a:nth-child(2) {
+    translate: 0 3px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .danger__place {
+    font-size: 7px;
+  }
+}

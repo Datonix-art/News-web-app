@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for info in all_information %}
+<section class="d-flex w-75 all__posts--section gap-4">
+  <div class="col-img img-fluid d-flex justify-content-center align-items-center" style="width: 239px;">
+    <img src="/static/img/{{ info.image }}" alt="image" class="img-fluid" style="max-width: 180px; max-height: 210px;"> 
+  </div>
+  <div class="col-text d-flex justify-content-center flex-column">
+    <p class="fw-bold article__title">{{ info.title }}</p>
+    <p class="text-muted relase__date">Posted on: {{ info.date.strftime('%Y %B %d, %H:%M:%S ')  }} </p>
+    <p class="description__text">
+      {{ info.description }}
+    </p>
+    <a href="/post/{{ info.id }}" class="more__info">
+      for external page click here
+    </a>
+  </div>
+</section>
+{% endfor %}
+
+<nav aria-label="Page navigation example" class="pb-5">
+  <ul class="pagination g-2">
+    {% for page in all_information.iter_pages() %}
+    <li class="page-item"><a class="page-link bg-dark text-white" href="/{{ page }}">{{ page }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% endblock %}

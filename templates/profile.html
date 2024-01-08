@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body class="w-100">
+   <div class="mb-3">
+     <a href="/1">
+      <i class="fa-sharp fa-solid fa-arrow-left text-primary fs-2"></i>        
+     </a>
+    </div>
+    <div class="profile__information d-flex align-items-center flex-column p-4">
+      <h1 class="display-3 text-primary">profile Information</h1>
+      <div class="mb-3 d-flex align-items-center gap-3" user_info>
+        <h1>Username:</h1>
+        <span>{{ current_user.username }}.</span>
+      </div>
+      <div class="mb-3 d-flex align-items-center gap-3" user_info>
+        <h1>Birth date:</h1>
+        <span>{{ current_user.birthDate.strftime('%Y %b %d') }}</span>
+      </div>
+      <div class="mb-3 d-flex align-items-center gap-3" user_info>
+        <h1>Sign up date:</h1>
+        <span>{{ current_user.signUpDate.strftime('%Y / %m / %d') }}</span>
+      </div>
+    </div>
+
+
+    <div class="change__SignUp--information container-fluid border border-1 border-primary rounded-5 d-flex justify-content-around align-items-center mb-5">
+      <a href="{{ url_for('edit_profile_username', information_id=current_user.id) }}">
+        <button class="border-0 rounded-3 bg-primary text-white p-2 px-5">change Username</button>
+      </a>
+      <a href="{{ url_for('edit_profile_password', information_id=current_user.id) }}">
+        <button class="border-0 rounded-3 bg-primary text-white p-2 px-5">change Password</button>
+      </a>
+    </div>
+
+    <div class="Your_posts border border-1 rounded-5 w-25 border-white" style="margin-inline: auto;">
+      <h1 class="p-3 text-primary text-center">Your posts</h1>
+    </div>
+
+  <div class="container-fluid flex-column d-flex justify-content-center">
+    {% include 'profile__article.html' %}
+  </div>
+  <script src="/static/js/script.js" defer></script>
+  <script src="https://kit.fontawesome.com/cdfccb4dbb.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

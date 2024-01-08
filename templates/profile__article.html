@@ -1,0 +1,40 @@
+{% block content %}
+{% for info in all_posted_information %}
+
+<section class="d-flex all__posts--section gap-4 my-4 border border-1 border-primary rounded-5 footer p-4">
+  <div class="col-img img-fluid d-flex justify-content-center align-items-center" style="width: 239px;">
+    <img src="/static/img/{{ info.image }}" alt="image" class="img-fluid" style="max-width: 170px; max-height: 210px; border-radius: 15px;"> 
+  </div>
+  <div class="col-text d-flex justify-content-center flex-column">
+    <p class="fw-bold fs-4 article__title">{{ info.title }}</p>
+    <p class="text-secondary relase__date">Posted on: {{ info.date.strftime('%Y %B %d, %H:%M:%S ')  }} </p>
+    <p class="description__text">
+      {{ info.description }}
+    </p>
+    <a href="/post/{{ info.id }}" class="more__info">
+      for external page click here
+    </a>
+  </div>
+
+  {% for user in user_information %}
+    {% if current_user.username == user.username %}
+      <div class="additional_section my-5 gap-5 ms-5">
+        <a href="{{ url_for('edit_info', information_id=info.id) }}" class="btn btn-outline-secondary">Edit</a>
+        <a href="{{ url_for('delete', id=info.id) }}" class="btn btn-outline-secondary mb-2" role="button">Delete</a>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</section>
+
+{% endfor %}
+
+<nav aria-label="Profile pagination" style="margin-inline: auto !important;">
+  <ul class="pagination">
+    {% for page in all_posted_information.iter_pages() %}
+    <li class="page-item"><a class="page-link text-primary border border-primary" style="background: #1a1a1a !important;" href="/profile/{{ page }}">{{ page }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
+{% endblock %}

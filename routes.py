@@ -100,7 +100,7 @@ def edit_info(information_id):
           file = path.join(app.root_path, 'static/img', form.image.data.filename)
           form.image.data.save(file)
                 
-        db.save()
+        information.save()
 
         return redirect('/1')
     return render_template('post.html', form=form)

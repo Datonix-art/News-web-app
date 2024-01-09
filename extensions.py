@@ -9,7 +9,7 @@ from admin_views import AdminModelView
 app = Flask(__name__ , template_folder='templates')
 app.config["SECRET_KEY"] = os.urandom(20)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
-app.config["FLASK_ADMIN_SWATCH"] = 'Slate'
+app.config["FLASK_ADMIN_SWATCH"] = 'slate'
 
 db = SQLAlchemy(app)
 

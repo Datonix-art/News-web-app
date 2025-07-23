@@ -1,5 +1,5 @@
 
-# Blog Platform web app
+# Blog platform web app
 
 Final project for TBC education / Geolab
 
